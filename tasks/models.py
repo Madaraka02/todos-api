@@ -11,6 +11,7 @@ class Task(models.Model):
     end_at = models.DateTimeField(null=True, blank=True)
     status = models.CharField(null=True, default='new', choices=TASK_STATUS_CHOICES, max_length=20)
     over_due = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
