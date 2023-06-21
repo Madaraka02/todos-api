@@ -62,7 +62,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "tms-api.up.railway.app"
+    "https://tms-api.up.railway.app"
 ]
 ROOT_URLCONF = 'TASKS.urls'
 
