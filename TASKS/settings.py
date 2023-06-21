@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-pclqnqzwt+c19n4(1qo^(0od*b+fz&kk)b&v*8kp*=5(sh46%s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -58,6 +58,11 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://todostms-frontend.vercel.app"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "tms-api.up.railway.app"
 ]
 ROOT_URLCONF = 'TASKS.urls'
 
