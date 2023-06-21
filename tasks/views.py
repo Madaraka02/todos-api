@@ -15,7 +15,9 @@ class TaskListAPIView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(
-                {"success": "Task created successfully"},
+                {"success": "Task created successfully",
+                 'data':serializer.data
+                 },
                 status=status.HTTP_201_CREATED
             )
         response_data = {
@@ -42,7 +44,8 @@ class TaskDetailAPIView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(
-                {"success": "Task updated successfully"},
+                {"success": "Task updated successfully",
+                 'data':serializer.data},
                 status=status.HTTP_200_OK
             )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -52,5 +55,5 @@ class TaskDetailAPIView(APIView):
         task.delete()
         return Response(
             {"success": "Task deleted successfully"},
-            status=status.HTTP_204_NO_CONTENT
+            status=status.HTTP_200_OK
         )
